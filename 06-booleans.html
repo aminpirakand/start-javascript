@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<style>
+    div{
+        font-size: xx-large;
+    }
+</style>
+<body>
+    <p>Booleans are another type of value</p>
+    <p>there are only 2 booleanse values:<strong>true, false</strong></p>
+    <div id="show"></div>
+    <script>
+    //document.getElementById('show').innerHTML= typeof( 3 > 5+5 )
+    // document.getElementById('show').innerHTML= ( 5 === '5' ) 
+    //document.getElementById('show').innerHTML= ( 5 !== '5' ) 
+    /*  if(false){
+        document.getElementById('show').innerHTML='hello'
+    }else{
+        document.getElementById('show').innerHTML='else'
+    }
+    */
+    const age = 15;
+    if(age >= 16){
+    document.getElementById('show').innerHTML='you can drive'
+    } else if(age>=14) {
+    document.getElementById('show').innerHTML='almost there!'
+
+    }else{
+    document.getElementById('show').innerHTML='you can not drive'
+    }
+    </script>
+</body>
+</html>
