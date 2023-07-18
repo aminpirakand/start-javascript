@@ -6,92 +6,124 @@
     <title>Calculator</title>
 </head>
 <style>
-    .calcu{
-        background-color: rgb(211, 211, 82);
-        width: 340px;
+    body{
+        background-color: black;
+    }
+    p{
+        padding: 0;
+        margin: 0;
+    }
+    button:last-child{
+        background-color: orange !important;
     }
     button{
-        width: 100px;
-        height: auto;
+        width: 60px;
+        height: 60px;
         border: none;
-        background-color: rgb(36, 34, 34);
-        color: rgb(243, 243, 81);
+        border-radius: 30px;
+        background-color: rgb(78, 73, 73);
+        color: white;
         margin: 5px;
-        padding: 10px;
+        padding: 8px;
         cursor: pointer;
         transition: 0.5s;
+        font-size: larger;
     }
-    button:hover{
-        background-color: rgb(15, 15, 15);
-        color: rgb(247, 247, 35);
+    #screen{
+        width:260px;
+        padding: 20px;
+        font-size: larger;
+        background-color: #f1ebe3;
+        color: black;
     }
 </style>
 <body>
-    <div class="calcu">
-        <button onclick="
+    <div id="screen">
+    </div>
+    <p>
+    <button onclick="
     calculation +='1'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">1</button>
 
     <button onclick="
     calculation +='2'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">2</button>
     <button onclick="
     calculation +='3'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     "
     >3</button>
-    <br>
+    <button onclick="
+    calculation += '+';
+    document.getElementById('screen').innerHTML=calculation
+    ">+</button>
+    </p>
+    <p>
     <button onclick="
     calculation +='4'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">4</button>
 
     <button onclick="
     calculation +='5'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">5</button>
     <button onclick="
     calculation +='6'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     "
     >6</button>
-    <br>
+    <button onclick="
+    calculation += '-';
+    document.getElementById('screen').innerHTML=calculation
+    ">-</button>
+    </p>
+    <p>
     <button onclick="
     calculation +='7'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">7</button>
 
     <button onclick="
     calculation +='8'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">8</button>
     <button onclick="
     calculation +='9'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     "
     >9</button>
-    <br>
+    <button onclick="
+    calculation += '*';
+    document.getElementById('screen').innerHTML=calculation
+    ">*</button>
+    </p>
+    <p>
     <button onclick="
     calculation +='0'
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     "
     >0</button>
     <button onclick="
-    calculation += '+';
-    console.log(calculation)
-    ">+</button>
+    calculation += '.';
+    document.getElementById('screen').innerHTML=calculation
+    ">.</button>
     <button onclick="
     calculation = eval(calculation);
-    console.log(calculation)
+    document.getElementById('screen').innerHTML=calculation
     ">=</button>
-    <br>
+    <button onclick="
+    calculation += '/';
+    document.getElementById('screen').innerHTML=calculation
+    ">/</button>
+    </p>
     <button onclick="
     calculation = ''
-    console.log(`rest Calculator:${calculation}`)
-    ">reset</button>
-    </div>
+    document.getElementById('screen').innerHTML=(`Clear Calculator.${calculation}`)
+    ">Clear</button>
+  
     
     <script>
         let calculation='';
