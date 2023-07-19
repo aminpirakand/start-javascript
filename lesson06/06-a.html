@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head or Tail</title>
+    <style>
+        div{
+            padding: 20px;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+<!--my solution
+    <button onclick="
+      const coinSelect = Math.random()
+      let result=''
+      if (coinSelect >= 0 && coinSelect<= 1/2){
+        result = 'tail'
+        document.getElementById('show').innerHTML=`you guess heads, result ${result}, false guess.`;
+    
+      }else if (coinSelect > 1/2 && coinSelect <= 1){
+        result='head'
+        document.getElementById('show').innerHTML=`you guess heads, result ${result}, true guess`;
+      }
+        
+    ">heads</button>
+    <button onclick="
+      const coinSelect = Math.random()
+      let result=''
+      if (coinSelect >= 0 && coinSelect<= 1/2){
+        result = 'tail'
+        document.getElementById('show').innerHTML=`you guess tail, result ${result}, true guess.`;
+    
+      }else if (coinSelect > 1/2 && coinSelect <= 1){
+        result='head'
+        document.getElementById('show').innerHTML=`you guess tail, result ${result}, false guess`;
+      }
+    ">tail</button>
+    -->
+    <button onclick="coinSelect()">Head</button>
+    <button onclick="coinSelect()">Tail</button>
+    <div id="show"></div>
+    <script>
+      function coinSelect() {
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'heads' : 'tails';
+      const guess = 'heads';
+      document.getElementById('show').innerHTML = (guess === result ? 'You win!' : 'You lose!');
+      }
+        /*exercises 06 a-c
+        let hour = 11
+        let name = 'amin'
+        if (hour >= 6 && hour <= 12) {
+            document.getElementById('show').innerHTML=`good morning ${name}!`
+        }else if (hour>=13 && hour<=17) {
+            document.getElementById('show').innerHTML='Good afternoon!'
+        }else{
+            document.getElementById('show').innerHTML='Good night!'
+        }
+        
+       let age = 2;
+       const holiday = true;
+       if ( (age <= 6 || age>=65) && !holiday) {
+            document.getElementById('show').innerHTML='Discount';
+       }else{
+            document.getElementById('show').innerHTML='No discount';
+       }
+       */
+      // Coin-flip Game 
+      /*
+      const coinSelect = Math.random()
+      let result=''
+      if (coinSelect >= 0 && coinSelect<= 1/2){
+        result = 'tail'
+        document.getElementById('show').innerHTML=`${result}`;
+    
+      }else if (coinSelect > 1/2 && coinSelect <= 1){
+        result='head'
+        document.getElementById('show').innerHTML=`${result}`;
+      }*/
+    </script>
+</body>
+</html>
