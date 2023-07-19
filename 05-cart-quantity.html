@@ -7,13 +7,57 @@
 </head>
 <body>
     <p>Cart Quantity</p>
-    <button onclick="console.log(`cart Quantity:${cartQuantity}`)">Show Quantity</button>
-    <button onclick="cartQuantity ++ ; console.log(`cart Quantity:${cartQuantity }`)">Add to Cart</button>
-    <button onclick="cartQuantity += 2; console.log(`cart Quantity:${cartQuantity }`)">+2</button>
-    <button onclick="cartQuantity += 3; console.log(`cart Quantity:${cartQuantity }`)">+3</button>
-    <button onclick="cartQuantity = 0;  console.log('cart was reset'); console.log(`cart Quantity:${cartQuantity }`)">Reset Cart</button>
+    <button onclick="
+    console.log(`cart Quantity:${cartQuantity}`)"
+    >Show Quantity</button>
+
+    <button onclick="
+    if (cartQuantity + 1 > 10) {
+        document.getElementById('show').innerHTML='the cart is full';
+    }else{
+        cartQuantity ++;
+        console.log(`cart Quantity:${cartQuantity }`)
+    }
+     ">Add to Cart</button>
+    <button onclick="
+    if (cartQuantity + 2 > 10) {
+        document.getElementById('show').innerHTML='the cart is full';
+    }else{
+        cartQuantity +=2
+        console.log(`cart Quantity:${cartQuantity }`)
+    }
+    ">+2</button>
+    <button onclick="
+    if (cartQuantity + 3 > 10) {
+        document.getElementById('show').innerHTML='the cart is full';
+    }else{
+        cartQuantity +=3
+        console.log(`cart Quantity:${cartQuantity }`)
+    }
+    ">+3</button>
+    <button onclick="
+    cartQuantity = 0;  console.log('cart was reset'); console.log(`cart Quantity:${cartQuantity }`)
+    document.getElementById('show').innerHTML=''
+    ">Reset Cart</button>
+    <button onclick="
+    if (cartQuantity - 2 < 0) {
+        document.getElementById('show').innerHTML='not enogh item';
+    }else{
+        cartQuantity -=2
+        console.log(`cart Quantity:${cartQuantity }`)
+    }">-2</button>
+    <button onclick="
+    if (cartQuantity - 3 < 0) {
+        document.getElementById('show').innerHTML='not enogh item';
+    }else{
+        cartQuantity -=3
+        console.log(`cart Quantity:${cartQuantity }`)
+    }">-3</button>
+    <div id="show"></div>
     <script>
         let cartQuantity = 0;
+        let maxQuantity=10;
+        let minQuantity= 0;
     </script>
 </body>
 </html>
