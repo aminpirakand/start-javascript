@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <div id="show"></div>
+    <div id="show1"></div>
+
+     <script>
+        /*
+        const product={
+            name:'shirt',
+            price:1000
+        };
+
+        document.getElementById('show').innerHTML= (product.price)
+        document.getElementById('show1').innerHTML= (product.name)
+        product.name = 'jeans'
+        document.getElementById('show1').innerHTML= (product.name)
+
+        //added new property and deleted property
+
+        product.newProperty = 'amin';
+        delete product.newProperty;
+        */
+        const product={
+            name:'shirt',
+            price:1000
+        };
+
+        document.getElementById('show').innerHTML= (product['name'])
+
+     </script>
+</body>
+</html>
