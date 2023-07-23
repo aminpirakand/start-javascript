@@ -43,7 +43,7 @@
     
    "><img src="img/paper-emoji.png" alt=""></button>
     
-    <button onclick="
+    <button on  click="
     playGame('scissors')
     "><img src="img/scissors-emoji.png" alt=""></button>
     <button onclick="
@@ -58,20 +58,10 @@
     <div id="show"></div>
     <script>
         let score = JSON.parse(localStorage.getItem('score')) || {
-        wins: 0,
-        losses: 0,
-        tie: 0
-      };
-
-      /*
-      if (!score) {
-        score = {
-          wins: 0,
-          losses: 0,
-          ties: 0
+            wins: 0,
+            losses: 0,
+            tie: 0
         };
-      }
-      */
 
         function playGame(playerMove){
             const computerMove = pickComputerMove();
@@ -112,7 +102,7 @@
             localStorage.setItem('score', JSON.stringify(score));
             document.getElementById('display').innerHTML=`Your Picked ${playerMove}.
             <br> Computer Picked ${computerMove}.<br> ${result}<br>
-            Wins:${score.wins} Losses:${score.losses} Tie:${score.tie}`;
+            Wins:${score['wins']} Losses:${score['losses']} Tie:${score['tie']}`;
         }
 
         function pickComputerMove() {

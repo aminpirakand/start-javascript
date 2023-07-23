@@ -26,13 +26,67 @@
         product.newProperty = 'amin';
         delete product.newProperty;
         */
+       /*
         const product={
             name:'shirt',
-            price:1000
+            price:1000,
+            rating:{
+                stars:3.5,
+                count:80
+            },
+            fun: function function1(){
+                console.log('function inside object')
+            }
         };
 
-        document.getElementById('show').innerHTML= (product['name'])
+        console.log(product);
+        console.log(product.name);
+        console.log(product['price']);
+        console.log(product.rating.count) 
+        product.fun()
+        */
+       console.log('hello'.length);
+       console.log('hello'.toUpperCase());
 
+       //object are refrences
+
+       const object1={
+        message:'hello'
+       };
+       const object2 = object1;
+       object1.message='good job!';
+       console.log(object1);
+       console.log(object2);
+
+       const object3 ={
+        message:'good job!'
+       };
+       console.log(object3 === object1);
+       console.log(object2 === object1);
+
+       const object4 ={
+        message:'good job!',
+        price:877,
+       };
+       //const message =  object4.message
+       //const message =  object4.price
+
+       const {message, price} = object4;
+       console.log(message);
+       console.log(price)
+
+       const object5 ={
+       // message : message
+       message,
+       //method: function func1() {
+       // console.log('method');
+       //}
+       method(){
+        console.log('method');
+       }
+       };
+       console.log(object5)
+       object5.method();
      </script>
 </body>
 </html>
