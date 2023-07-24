@@ -39,16 +39,35 @@
       }
     ">tail</button>
     -->
-    <button onclick="coinSelect()">Head</button>
-    <button onclick="coinSelect()">Tail</button>
+    <button onclick="playGame('heads')">Head</button>
+    <button onclick="playGame('tails')">Tail</button>
     <div id="show"></div>
+    <div id="show1"></div>
     <script>
-      function coinSelect() {
+      const score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+      };
+      
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        document.getElementById('show').innerHTML = (guess === result ? 'You win!' : 'You lose!');
+        if (guess === result) {
+          score.wins++;
+        }else{
+          score.losses++;
+        }
+        document.getElementById('show1').innerHTML = ` wins : ${score.wins} <br> losses:${score.losses}`        
+        localStorage.setItem('score', JSON.stringify(score));
+        
+      }
+      /*function coinSelect() {
       const randomNumber = Math.random();
       const result = randomNumber < 0.5 ? 'heads' : 'tails';
       const guess = 'heads';
       document.getElementById('show').innerHTML = (guess === result ? 'You win!' : 'You lose!');
-      }
+      }*/
         /*exercises 06 a-c
         let hour = 11
         let name = 'amin'
